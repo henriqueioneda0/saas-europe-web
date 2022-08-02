@@ -26,11 +26,11 @@ class App extends React.Component<any,IState> {
   }
 
   goToLogin() {
-    window.location.replace('http://localhost:8080/auth/google')
+    window.location.replace(`${process.env.REACT_APP_BACKEND_URL}/auth/google`)
   }
 
   getUsers() {
-    return axios.get('http://localhost:8080/users', { withCredentials: true }).then(res => res.data)
+    return axios.get(`${process.env.REACT_APP_BACKEND_URL}/users`, { withCredentials: true }).then(res => res.data)
   }
 
   render(){
