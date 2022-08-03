@@ -1,4 +1,3 @@
-import Container from 'react-bootstrap/Container';
 import { Button, Card } from 'react-bootstrap';
 import axios from 'axios';
 import './App.css'
@@ -29,6 +28,10 @@ class App extends React.Component<any,IState> {
     window.location.replace(`${process.env.REACT_APP_BACKEND_URL}/auth/google`)
   }
 
+  logout() {
+    window.location.replace(`${process.env.REACT_APP_BACKEND_URL}/auth/google/logout`)
+  }
+
   getUsers() {
     return axios.get(`${process.env.REACT_APP_BACKEND_URL}/users`, { withCredentials: true }).then(res => res.data)
   }
@@ -56,6 +59,7 @@ class App extends React.Component<any,IState> {
                           </Card>
                       )}
                       </section>
+                      <Button onClick={this.logout}>Logout</Button>
                     </div>
                   }
                   {
@@ -80,7 +84,7 @@ class App extends React.Component<any,IState> {
                       <button className="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
 
                       <div className="d-flex justify-content-center text-center mt-4 pt-1">
-                        <Button onClick={this.goToLogin}><FontAwesomeIcon icon={faGoogle} className="me-2"/>Continue with Google </Button>
+                        <Button onClick={this.goToLogin} className="px-4 py-2"><FontAwesomeIcon icon={faGoogle} className="me-2"/>Continue with Google </Button>
                       </div>
                     </div>
                   }

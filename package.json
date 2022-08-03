@@ -1,7 +1,7 @@
 {
   "name": "saas-europe-web",
   "version": "0.1.0",
-  "homepage": "https://henriqueioneda0.github.io/saas-europe-web",
+  "homepage": "https://app.ioneda.dev",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
